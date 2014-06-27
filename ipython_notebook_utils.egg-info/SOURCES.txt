@@ -1,0 +1,7 @@
+setup.py
+ipython_notebook_utils/__init__.py
+ipython_notebook_utils.egg-info/PKG-INFO
+ipython_notebook_utils.egg-info/SOURCES.txt
+ipython_notebook_utils.egg-info/dependency_links.txt
+ipython_notebook_utils.egg-info/requires.txt
+ipython_notebook_utils.egg-info/top_level.txt
