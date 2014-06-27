@@ -23,7 +23,7 @@ class ProgressBar():
         self.id = "progress-bar-%s" % str(uuid.uuid4())
 
     def start(self, width='50%'):
-        style = "width:%s;" % w idth
+        style = "width:%s;" % width
         html = HTML("<progress id='%s' value='0' max='%i' style='%s'></progress>" % (self.id, self.size, style))
         display(html)
 
