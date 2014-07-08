@@ -12,19 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+__version__ = "0.0.1"
+
+
 import uuid
 from IPython.display import HTML, Javascript, display
 
 
 class ProgressBar():
-    def __init__(self, size=100):
+    def __init__(self, size=100, label=""):
         self.progress = 0
         self.size = size
-        self.id = "progress-bar-%s" % str(uuid.uuid4())
+        self.label = label
+        self.id = None
 
     def start(self, width='50%'):
-        style = "width:%s;" % w idth
-        html = HTML("<progress id='%s' value='0' max='%i' style='%s'></progress>" % (self.id, self.size, style))
+        self.id = "progress-bar-%s" % str(uuid.uuid4())
+        style = "width:%s;" % width
+        html = HTML("%s<progress id='%s' value='0' max='%i' style='%s'></progress>"
+                    % (self.label, self.id, self.size, style))
         display(html)
 
     def increment(self, i=1):
@@ -42,3 +48,7 @@ class ProgressBar():
             self.progress = p
         else:
             raise RuntimeError("Already reached 100%")
+
+    def reset(self):
+        self.progress = 0
+        self.id = None

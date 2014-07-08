@@ -15,7 +15,7 @@
 
 
 from setuptools import setup, find_packages
-from optlang import __version__
+from ipython_notebook_utils import __version__
 
 with open('requirements.txt') as fhandle:
     requirements = [line.strip() for line in fhandle]
